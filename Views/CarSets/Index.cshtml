@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WebApplication2.Models.CarSet>
+
+@{
+    ViewBag.Title = "Please viewing the car stock first ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+ <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarVin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarRegisterDate)
+        </th>
+        <th></th>
+    </tr>
+</thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarVin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarRegisterDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+        </tr>
+         }
+        </tbody>
+</table>
+
+
+    @section Scripts {
+        @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+        @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+        <script>
+$(document).ready(function () {
+$('.table').DataTable();
+});
+        </script>
+    }
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+          rel="stylesheet" />

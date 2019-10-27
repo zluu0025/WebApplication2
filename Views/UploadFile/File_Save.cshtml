@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+
+<h2>Test Upload the file</h2>
+
+@using (Html.BeginForm("File_Save", "UploadFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" })
+        <input type="submit" value=" Save Files" />
+        @ViewBag.Message
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Send E-mail", "Contact", "Home")
+</div>

@@ -1,0 +1,75 @@
+﻿@model WebApplication2.Models.BookingSet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookingSet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CarSet.CarVin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarSet.CarVin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationSet.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationSet.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RengtingStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RengtingStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentingEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentingEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_PhonbeNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_PhonbeNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

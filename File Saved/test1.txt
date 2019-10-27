@@ -1,0 +1,8 @@
+document.getElementById("test1").innerHTML = "This is a replaced message";
+
+do{
+counting --
+}while£¨counting >0);
+if (counting = 0 ){
+document.getElementById("demo").innerHTML = "Done, try more";}
+};
